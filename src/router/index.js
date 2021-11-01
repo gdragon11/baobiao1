@@ -2,7 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+
 Vue.use(VueRouter)
+
 
 const routes = [
   {
@@ -32,16 +34,24 @@ const routes = [
       path: 'kcgl',
       name: 'kcgl',
       component: () => import('../views/kcgl/index.vue'),
+     },
+     {
+      path: 'cart',
+      name: 'cart',
+      component: () => import('../views/kcgl/cart.vue'),
      }
     ]
 
+
   }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
+
 
 export default router
