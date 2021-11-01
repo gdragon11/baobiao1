@@ -1,23 +1,22 @@
 <template>
     <div>
         <div class="toubu">
-            <h3>手机商城</h3>
-            <router-link class="clgwc" to="/gwc">购物车({{$store.getters.numFilter}})</router-link>
+            <h3>购物车</h3>
+            <router-link class="clgwc" to="/">返回</router-link>
         </div>
         <ul>
-            <li class="neirong" v-for="(item,index) in list3" :key="item.id">
+            <li class="neirong" v-for="(item) in list" :key="item.id">
                 <div class="nrbk">
-                    <span class="left"><img :src="item.img" alt=""></span>
+                    <span class="left"><img :src="item.img" alt=""></span> 
                     <div class="right">
                         <h4 class="r_text">{{item.name}}</h4><br>
                         <div class="r_jieshao">{{item.slogan}}</div>
                         <div class="r_jiaqian">￥{{item.price}}</div>
-                        <!-- <div class="r_div">
-                            <button>+</button>
-                            <span></span>
-                            <button>-</button>
-                        </div> -->
-                        <button class="jr" @click="tuanjia(index)">加入购物车</button>
+                        <div class="r_div">
+                            <button class="jia" @click="item.num++">+</button>
+                            <button class="shuliang">{{item.num}}</button>
+                            <button class="jian" @click="$store.dispatch('jianjian',item.id)">-</button>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -29,10 +28,7 @@
 import {mapState} from "vuex"
 export default {
     computed:{
-        ...mapState(['list3','list',"list123"]),
-        // numFilter(){
-        //     return this.$store.getters.numFilter;
-        // }
+        ...mapState(['list3','list']),
     },
     data(){
         return {
@@ -40,24 +36,46 @@ export default {
         }
     },
     methods:{
-        
-        tuanjia(index){
-            this.$store.dispatch('tiaojia',index)
-            console.log(index)
-        }
-                        
+                
     },
     created(){
-        this.$store.dispatch("tianjia",JSON.parse(localStorage.getItem("shangpingshuju")))
-        localStorage.setItem("shangpingshuju",JSON.stringify(this.list123))
+
     },
-    
 }
 </script>
 <style lang="scss" scoped>
 li{
     list-style: none;
     display: flex;
+}
+.shuliang{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: .55rem;
+    right: -.13rem;
+    border: 1px solid darkblue;
+    background: white;
+}
+.jia{
+    position: relative;
+    top: .55rem;
+    right: 0;
+    width: .2rem;
+    background: white;
+    border-radius: 40%;
+    height: .2rem;
+    border: 1px solid lawngreen;
+}
+.jian{
+    position: relative;
+    top: .55rem;
+    right: -.25rem;
+    background: white;
+    width: .2rem;
+    border-radius: 40%;
+    height: .2rem;
+    border: 1px solid lawngreen;
 }
 .jr{
     position: absolute;
@@ -100,7 +118,7 @@ li{
     margin-left: .04rem;
 }
 .toubu{
-  width: 3.75rem;
+  width: 100%;
   height: .5rem;
   background:#ff6704;
 }
@@ -111,19 +129,14 @@ li{
 .clgwc{
     position: absolute;
     top: 15px;
-    right: 30px;
-}
-ul{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    left: 30px;
 }
 .neirong{
     width: 3.43rem;
     height: 1.54rem;
     margin: 0 auto;
     // background: red;
-    // padding: 0 .15rem;    
+    padding: 0 .15rem;    
     margin: .1rem 0;
 }
 .left{
@@ -139,6 +152,8 @@ ul{
 .nrbk{
     width: 3.18rem;
     height: 1.42rem;
+
+    
     margin: 0 auto;
     padding-top: .16rem;
     background: azure;
