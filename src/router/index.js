@@ -1,11 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
-
 Vue.use(VueRouter)
-
-
 const routes = [
   {
     path: '/',
@@ -39,10 +35,13 @@ const routes = [
       path: 'cart',
       name: 'cart',
       component: () => import('../views/kcgl/cart.vue'),
-     }
+     },
+     {
+      path: 'main',
+      name: 'main',
+      component: () => import('../views/main/index.vue'),
+     },
     ]
-
-
   }
 ]
 
