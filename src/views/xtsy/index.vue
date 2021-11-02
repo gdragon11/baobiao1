@@ -34,7 +34,7 @@
                   <p class="goods_info">
                     自然堂弹嫩紧致套装补水保湿化妆护肤品旗舰店官方专柜正品水乳套
                   </p>
-                  <p class="goods_price">133</p>
+                  
                 </a>
               </li>
               <li>
@@ -46,7 +46,7 @@
                   <p class="goods_info">
                     自然堂弹嫩紧致套装补水保湿化妆护肤品旗舰店官方专柜正品水乳套
                   </p>
-                  <p class="goods_price">133</p>
+                  
                 </a>
               </li>
               <li>
@@ -58,7 +58,7 @@
                   <p class="goods_info">
                     自然堂弹嫩紧致套装补水保湿化妆护肤品旗舰店官方专柜正品水乳套
                   </p>
-                  <p class="goods_price">133</p>
+                  
                 </a>
               </li>
               <li>
@@ -70,10 +70,33 @@
                   <p class="goods_info">
                     自然堂弹嫩紧致套装补水保湿化妆护肤品旗舰店官方专柜正品水乳套
                   </p>
-                  <p class="goods_price">133</p>
+                  
                 </a>
               </li>
-              
+              <li>
+                <a href="#">
+                  <img
+                    src="https://gw.alicdn.com/bao/uploaded/i3/1964144719/O1CN01stJKqJ1kjLhQvkNXE_!!0-item_pic.jpg"
+                    alt=""
+                  />
+                  <p class="goods_info">
+                    自然堂弹嫩紧致套装补水保湿化妆护肤品旗舰店官方专柜正品水乳套
+                  </p>
+                  
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="https://gw.alicdn.com/bao/uploaded/i3/1964144719/O1CN01stJKqJ1kjLhQvkNXE_!!0-item_pic.jpg"
+                    alt=""
+                  />
+                  <p class="goods_info">
+                    自然堂弹嫩紧致套装补水保湿化妆护肤品旗舰店官方专柜正品水乳套
+                  </p>
+                  
+                </a>
+              </li>
                
             </ul>
           </div>
@@ -116,7 +139,7 @@ body {
   margin-left: 10px;
 }
 .floor_con {
-  width: 800px;
+  width: 998px;
   height: 500px;
   display: flex;
   justify-content: space-between;
@@ -161,7 +184,7 @@ body {
 }
 .floor_con_right ul li {
   width: 220px;
-  height: 200px;
+  height: 248px;
   background: #fff;
   margin-bottom: 10px;
   text-align: center;
@@ -177,7 +200,5 @@ body {
   margin: 12px auto;
   overflow: hidden;
 }
-.goods_price {
-  color: red;
-}
+
 </style>
